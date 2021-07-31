@@ -9,7 +9,6 @@ import static java.util.Arrays.asList;
 import static org.apache.commons.lang3.builder.ToStringStyle.JSON_STYLE;
 
 public class Aluno {
-
     private Cpf cpf;
     private String nome;
     private Email email;

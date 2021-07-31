@@ -7,7 +7,8 @@ import javax.validation.constraints.*;
 import java.util.List;
 
 import static java.util.stream.Collectors.toList;
-import static javax.persistence.CascadeType.*;
+import static javax.persistence.CascadeType.MERGE;
+import static javax.persistence.CascadeType.PERSIST;
 
 @Table(name = "alunos")
 @Entity(name = "aluno")

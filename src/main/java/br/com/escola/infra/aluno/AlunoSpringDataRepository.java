@@ -30,7 +30,6 @@ public class AlunoSpringDataRepository implements AlunoRepository {
 
     @Override
     public Optional<Aluno> buscarPorCpf(Cpf cpf) {
-
         return repositoryImpl.findByBaseCpfAndDigitosCpf(cpf.getBaseCpf(), cpf.getDigitos())
                 .map(alunoEntity -> Optional.of(alunoConverter.from(alunoEntity)))
                 .orElseGet(() -> Optional.empty());
@@ -44,7 +43,6 @@ public class AlunoSpringDataRepository implements AlunoRepository {
                 .collect(toList());
     }
 }
-
 
 @Repository
 interface AlunoSpringDataRepositoryImpl extends CrudRepository<AlunoEntity, Long> {

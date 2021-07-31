@@ -14,7 +14,7 @@ public class AlunoConverter {
     private EncriptadorSenha encriptador;
 
     public Aluno from(AlunoEntity alunoEntity) {
-        Cpf cpf = Cpf.of(alunoEntity.getBaseCpf(), alunoEntity.getDigitosCpf());
+        Cpf cpf = Cpf.of(alunoEntity.getBaseCpf(), alunoEntity.getDigitosCpf().intValue());
 
         List<Telefone> telefones = alunoEntity.getTelefones()
                 .stream()

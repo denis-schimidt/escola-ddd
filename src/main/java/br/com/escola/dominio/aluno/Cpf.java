@@ -22,8 +22,14 @@ public class Cpf {
         this.digitos = (byte) digits;
     }
 
-    public static Cpf of(long base, int digits) {
-        return new Cpf(base, digits);
+    public static Cpf from(String cpf) {
+        String[] partsOfCpf = cpf.split("-");
+
+        return of(Long.parseLong(partsOfCpf[0]), Integer.parseInt(partsOfCpf[1]));
+    }
+
+    public static Cpf of(Long baseCpf, Integer digitosCpf) {
+        return new Cpf(baseCpf, digitosCpf);
     }
 
     private boolean isCpfValid(long base, int digits) {
@@ -57,8 +63,12 @@ public class Cpf {
         return Objects.hash(baseCpf, digitos);
     }
 
+    public String toFormattedString() {
+        return format("%,d-%02d", baseCpf, digitos);
+    }
+
     @Override
     public String toString() {
-        return format("%,d-%02d", baseCpf, digitos);
+        return format("%d-%02d", baseCpf, digitos);
     }
 }
