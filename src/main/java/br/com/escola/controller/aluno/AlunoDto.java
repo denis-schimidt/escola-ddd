@@ -8,6 +8,7 @@ import java.util.List;
 
 import static java.util.stream.Collectors.toList;
 import static java.util.stream.Collectors.toUnmodifiableList;
+import static org.apache.commons.lang3.builder.ToStringStyle.JSON_STYLE;
 
 public class AlunoDto {
     private final String cpf;
@@ -66,7 +67,7 @@ public class AlunoDto {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this)
+        return new ToStringBuilder(this, JSON_STYLE)
                 .append("cpf", cpf)
                 .append("nome", nome)
                 .append("email", email)

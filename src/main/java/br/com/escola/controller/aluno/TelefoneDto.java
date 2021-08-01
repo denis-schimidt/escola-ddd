@@ -1,6 +1,9 @@
 package br.com.escola.controller.aluno;
 
 import br.com.escola.dominio.aluno.Telefone;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+
+import static org.apache.commons.lang3.builder.ToStringStyle.JSON_STYLE;
 
 public class TelefoneDto {
     private Integer ddd;
@@ -28,5 +31,13 @@ public class TelefoneDto {
 
     public void setNumero(Long numero) {
         this.numero = numero;
+    }
+
+    @Override
+    public String toString() {
+        return new ToStringBuilder(this, JSON_STYLE)
+                .append("ddd", ddd)
+                .append("numero", numero)
+                .toString();
     }
 }

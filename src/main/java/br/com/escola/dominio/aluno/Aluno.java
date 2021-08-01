@@ -24,6 +24,11 @@ public class Aluno {
     }
 
     public void adicionar(Telefone telefone) {
+
+        if(telefones.size() == 2) {
+            throw new NumeroMaximoTelefonesCadastradosException(this);
+        }
+
         telefones.add(telefone);
     }
 
